@@ -1,0 +1,135 @@
+:root {
+    --bg-color: #f4f4f9;
+    --primary-text-color: #333;
+    --board-bg: #e0e0e0;
+    --cell-bg: #ffffff;
+    --x-color: #5b85d6; /* Soothing Blue */
+    --o-color: #d65b85; /* Soothing Pink */
+    --button-bg: #78a1d1;
+    --button-hover-bg: #5b85d6;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-text-color);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Setup Screen --- */
+#setup-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adjusted to target all buttons */
+button {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--button-bg);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.mode-btn.selected {
+    background-color: var(--button-hover-bg);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#player-names {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#player-names input {
+    font-family: var(--font-family);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--board-bg);
+    width: 200px;
+    text-align: center;
+}
+
+/* --- Game Screen --- */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    background-color: var(--board-bg);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cell-bg);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+.cell.x {
+    color: var(--x-color);
+}
+
+.cell.o {
+    color: var(--o-color);
+}
+
+/* ADDED: Style for the button container */
+.game-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
